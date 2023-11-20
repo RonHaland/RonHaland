@@ -1,2 +1,2 @@
-### WELCOM TO MY PROFILE 🤠
+### WELCOME TO MY PROFILE 🤠
 
