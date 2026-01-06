@@ -1,0 +1,27 @@
+Import-Module posh-git
+
+
+## Git functions
+function commit { git commit -m $args }
+function amend { git commit --amend --no-edit }
+function push { git push }
+function pull { git pull }
+function fetch { git fetch }
+function fetch-rebase { git fetch && git rebase $args }
+function delete-branches { & $env:HOME/.config/powershell/delete-git-branches.ps1 -Pattern $args[0] }
+
+
+## Git aliases
+Set-Alias -Name gcom -Value commit
+Set-Alias -Name gamend -Value amend
+Set-Alias -Name gpus -Value push
+Set-Alias -Name gpul -Value pull
+Set-Alias -Name gfr -Value fetch-rebase
+Set-Alias -Name gdel -Value delete-branches
+
+## GPG
+$env:GPG_TTY = (tty)
+
+## Fooz alias
+function fooz { cat $env:HOME/Desktop/fooz.txt }  
+Set-Alias -Name OhMightyGodOfFoozGiveMeAllYourSecretRules -Value fooz
