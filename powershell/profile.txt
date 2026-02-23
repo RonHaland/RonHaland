@@ -22,6 +22,6 @@ Set-Alias -Name gdel -Value delete-branches
 ## GPG
 $env:GPG_TTY = (tty)
 
-## Fooz alias
-function fooz { cat $env:HOME/Desktop/fooz.txt }  
-Set-Alias -Name OhMightyGodOfFoozGiveMeAllYourSecretRules -Value fooz
+## Present markdown
+function present-markdown { node $env:HOME/dev/RonHaland/javascript/scripts/present-markdown.mjs $args }
+Set-Alias -Name present -Value present-markdown
