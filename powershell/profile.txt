@@ -9,6 +9,8 @@ function pull { git pull }
 function fetch { git fetch }
 function fetch-rebase { git fetch && git rebase $args }
 function delete-branches { & $env:HOME/.config/powershell/delete-git-branches.ps1 -Pattern $args[0] }
+function create-from-master { git fetch && git switch -c $args[0] origin/master --no-track }
+function create-from-main { git fetch && git switch -c $args[0] origin/main --no-track }
 
 
 ## Git aliases
@@ -18,6 +20,8 @@ Set-Alias -Name gpus -Value push
 Set-Alias -Name gpul -Value pull
 Set-Alias -Name gfr -Value fetch-rebase
 Set-Alias -Name gdel -Value delete-branches
+Set-Alias -Name gmaster -Value create-from-master
+Set-Alias -Name gmain -Value create-from-main
 
 ## GPG
 $env:GPG_TTY = (tty)
